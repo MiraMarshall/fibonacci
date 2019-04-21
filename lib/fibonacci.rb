@@ -5,8 +5,19 @@
 # ....
 # e.g. 6th fibonacci number is 8
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n) with n being the input.
+# Space complexity: O(1)- constant because it take the same amount of space regardless of the input.
 def fibonacci(n)
-  raise NotImplementedError
+  if n == nil || n < 0
+    raise ArgumentError, "n cannot be nill or negaitve"
+  end
+
+  if n == 1 || n == 2
+    result = 1
+  elsif n == 0
+    result = 0
+  else
+    result = fibonacci(n - 1) + fibonacci(n - 2)
+  end
+  return result
 end
